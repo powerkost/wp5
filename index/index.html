@@ -1,0 +1,32 @@
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS</title>
+              <script>function st() {
+    var k = document.getElementById("kol").value;
+    var e = document.getElementById("ed").value;
+    var r = document.getElementById("result");
+    r.innerHTML = k * e;
+    if (k * e === 0) {
+        alert("ноль получается)");
+    }
+}
+window.document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded and parsed");
+    var b = document.getElementById("button");
+    b.addEventListener("click", st);
+});</script>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <h2>Калькулятор стоимости заказа</h2>
+                <label>Количество(шт.):<br><input type="text" id="kol" placeholder="0" oninput="this.value = this.value.replace(/[^0-9\.]+/g, '')"><br></label>
+                <label>Стоимость(ед.):<br><input type="text" id="ed" placeholder="0" oninput="this.value = this.value.replace(/[^0-9\.]+/g, '')"><br></label>
+                <input type="button" value="Стоимость" id="button">
+            </fieldset>
+        </form>
+        <br>
+        Итого:<div id="result"></div>
+    </body>
+</html>
